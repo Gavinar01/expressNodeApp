@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
+const http = require(`http`);
+const server = http.createServer(app);
 
 // Middleware
 app.use(cors());
@@ -27,8 +29,15 @@ const submitTalentForm = require('./API/submit');
 // Use API routes
 app.use('/submit', submitTalentForm);
 
-// Start the server
-const PORT = process.env.PORT || 5000; // Use environment variable for PORT
+//Local server
+/*const PORT = 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});*/
+
+// Start the server Azure
+const PORT = process.env.PORT || 5000; // Environment variable for PORT
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

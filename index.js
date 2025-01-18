@@ -6,7 +6,7 @@ const http = require(`http`);
 const server = http.createServer(app);
 
 // Middleware
-app.use(cors());
+app.use(cors({origin: ["https://danoapi.azurewebsites.net/submit", "http://localhost:5000"], methods: ["GET", "POST"]}));
 app.use(express.json()); // Middleware to parse JSON request bodies
 
 // MongoDB connection

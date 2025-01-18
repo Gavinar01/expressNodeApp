@@ -24,10 +24,10 @@ app.get('/', (req, res) => {
 });
 
 // Import API routes
-const submitTalentForm = require('./API/submit');
+const submitValoAcad = require('./API/submit');
 
 // Use API routes
-app.use('/submit', submitTalentForm);
+app.use('/submit', submitValoAcad);
 
 //Local server
 /*const PORT = 3000;
